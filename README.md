@@ -30,8 +30,8 @@ Each test case is run repeatedly (how many iterations depend on each test case),
 The following metrics are collected for each test case
 
 * Evaluation latency - the time to evaluate the policy
-* CPU utilization - how efficient the evaluation is
-* Memory utilization - memory consumption for running the test
+* (TODO) CPU utilization - how efficient the evaluation is
+* (TODO) Memory utilization - memory consumption for running the test
 
 ## Running
 
@@ -39,5 +39,11 @@ To run the benchmark, make sure you have the `opa` and `swio` executables and ru
 
 ## Results
 
-TODO
+Running on an Macbook Air M1, p99 evaluation latency (ns):
 
+| Benchmark |     OPA | Seedwing | Speedup |
+| Integer   |   13742 |    *293* |     71x |
+| String    |   48735 |    *293* |    166x |
+| JSON      | 1452139 | *232447* |      6x |
+
+CPU and memory utilization numbers are not yet captured. 
