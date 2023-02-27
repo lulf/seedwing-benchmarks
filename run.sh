@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-TESTCASES=integer
+TESTCASES="integer string"
 
 for c in $TESTCASES
 do
