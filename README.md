@@ -14,6 +14,8 @@ The rules and patterns in this benchmark are constructed to be optimal for each 
 * String comparison. Exactly matching a string.
 * JSON comparison. Validating a CycloneDX JSON structure for license compliance
 
+You can inspect the policies and the inputs in the `testcases/` folder.
+
 ## Methodology
 
 To run the test, the benchmarking commands for each policy engine is used.
@@ -21,13 +23,13 @@ To run the test, the benchmarking commands for each policy engine is used.
 For OPA, the `opa bench` command is used
 For Seedwing, the `swio bench` command is used
 
-Each test case is run repeatedly (how many iterations depend on each test case), and average, median and standard deviation are recorded.
+Each test case is run repeatedly (how many iterations depend on each test case), and average, median, standard deviation and percentiles are recorded.
 
 ## Metrics
 
 The following metrics are collected for each test case
 
-* Evaluation latency - the time to evaluate the policy
+* Evaluation latency - the time to evaluate the policy (lower is better)
 * (TODO) CPU utilization - how efficient the evaluation is
 * (TODO) Memory utilization - memory consumption for running the test
 
