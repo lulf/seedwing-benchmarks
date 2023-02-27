@@ -1,33 +1,15 @@
 package test
 
-# Accepted Values: "Critical", "High", "Medium", "Low", "Negligible", "UnknownSeverity"
-notAllowedSeverities := ["Critical", "High", "UnknownSeverity"]
-ignoreCves := []
+import future.keywords.if
 
-contains(array, elem) = true {
-  array[_] = elem
-} else = false { true }
+default allow := false
 
-isSafe(match) {
-  severities := { e | e := match.ratings.rating.severity } | { e | e := match.ratings.rating[_].severity }
-  some i
-  fails := contains(notAllowedSeverities, severities[i])
-  not fails
+allowedLicenses := ["Apache-2.0", "MIT", "CC0-1.0", "EPL-1.0", "UPL-1.0", "EPL-2.0", "BSD-2-Clause", "BSD-3-Clause"]
+
+allow if {
+    count({x | validLicense(input.components[x]) }) == count(input.components)
 }
 
-isSafe(match) {
-  ignore := contains(ignoreCves, match.id)
-  ignore
-}
-
-deny[msg] {
-  comps := { e | e := input.bom.components.component } | { e | e := input.bom.components.component[_] }
-  some i
-  comp := comps[i]
-  vulns := { e | e := comp.vulnerabilities.vulnerability } | { e | e := comp.vulnerabilities.vulnerability[_] }
-  some j
-  vuln := vulns[j]
-  ratings := { e | e := vuln.ratings.rating.severity } | { e | e := vuln.ratings.rating[_].severity }
-  not isSafe(vuln)
-  msg = sprintf("CVE %s %s %s", [comp.name, vuln.id, ratings])
+validLicense(component) {
+    component.licenses[_].license.id == allowedLicenses[_]
 }
