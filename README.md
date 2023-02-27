@@ -37,9 +37,9 @@ The following metrics are collected for each test case
 
 To run the benchmark, make sure you have the `opa` and `swio` executables and run `bash run.sh`. The results will be put in the `results/` folder grouped by test case.
 
-## Results
+## Preliminary results
 
-Running on an Macbook Air M1, p99 evaluation latency (ns):
+The benchmarks are still in development, but so far, running on an Macbook Air M1, p99 evaluation latency (ns) looks like the following:
 
 | Benchmark |     OPA | Seedwing | Speedup |
 | :---      |    ---: |     ---: |    ---: |
@@ -47,4 +47,4 @@ Running on an Macbook Air M1, p99 evaluation latency (ns):
 | String    |   48735 |    *293* |    166x |
 | JSON      | 1452139 | *232447* |      6x |
 
-CPU and memory utilization numbers are not yet captured. 
+NOTE: CPU and memory utilization numbers are not yet captured. 
