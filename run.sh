@@ -4,8 +4,9 @@ TESTCASES="integer string"
 
 for c in $TESTCASES
 do
-	opa bench -i testcases/$c/input -d testcases/$c/rego/test.rego --package test allow -f json --benchmem > testcases/$c/opa.json
-	seedwing-policy-cli -p testcases/$c/seedwing bench --name test::allow --iterations 10000000 --input testcases/$c/input > testcases/$c/seedwing.json
+	mkdir -p results/$c
+	opa bench -i testcases/$c/input -d testcases/$c/opa.rego --package test allow -f json --benchmem > results/$c/opa.json
+	swio --policy testcases/$c bench --name seedwing::allow --count 10000000 --input testcases/$c/input > results/$c/seedwing.json
 done
 
 
