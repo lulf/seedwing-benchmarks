@@ -37,7 +37,7 @@ To run the benchmark, make sure you have the `opa` and `swio` executables and ru
 
 ## Preliminary results
 
-The benchmarks are still in development, but so far, running on an Macbook Air M1, p99 evaluation latency (ns) looks like the following:
+The benchmarks are still in development, but so far, running on an Macbook Air M1, p99 evaluation latency (ns) looks like the following (lower is better):
 
 | Benchmark |     OPA | Seedwing | Speedup |
 | :---      |    ---: |     ---: |    ---: |
