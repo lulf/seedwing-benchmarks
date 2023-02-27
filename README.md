@@ -13,8 +13,6 @@ The rules and patterns in this benchmark are constructed to be optimal for each 
 * Integer comparison. Matching a number being equal to a particular value
 * String comparison. Exactly matching a string.
 * JSON comparison. Validating a CycloneDX JSON structure for license compliance
-* Network address check. Checking IP against a range.
-* Compound expressions: a mix of integer and string matches with logical AND and logical OR operators.
 
 ## Methodology
 
