@@ -21,7 +21,7 @@ The rules and patterns in this benchmark are constructed to be optimal for each 
 To run the test, the benchmarking commands for each policy engine is used.
 
 For OPA, the `opa bench` command is used
-For Seedwing, the `seedwing-policy-cli bench` command is used
+For Seedwing, the `swio bench` command is used
 
 Each test case is run repeatedly (how many iterations depend on each test case), and average, median and standard deviation are recorded.
 
@@ -35,7 +35,7 @@ The following metrics are collected for each test case
 
 ## Running
 
-To run the benchmark, make sure you have the `opa` and `seedwing-policy-cli` executables and run `bash run.sh`. The results will be put in files for each engine, `opa.json` and `seedwing.json`, within each test case.
+To run the benchmark, make sure you have the `opa` and `swio` executables and run `bash run.sh`. The results will be put in the `results/` folder grouped by test case.
 
 ## Results
 
