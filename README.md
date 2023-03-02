@@ -1,12 +1,14 @@
 # Seedwing Benchmarks
 
-*WIP* This is work in progress, not all benchmarks are complete
+*WIP* This is work in progress, not all benchmarks are complete.
 
 This repository contains benchmarks used to compare the performance of Open Policy Agent (OPA) and Seedwing Policy. OPA is an established project, and there is an overlap of the capabilities, even though Seedwing is focusing on supply chain security.
 
 The benchmarks try to reduce external factors, and cover some basic use cases that both policy engines support, with the goal of adding more use cases as needed. All the sources and results of the benchmark are made public and can be re-run by users evaluating.
 
 The rules and patterns in this benchmark are constructed to be optimal for each of these engines, to make it an as fair as possible comparison.
+
+Also please take into acount that results may be biased towards Seedwing since we do not know OPA as well as Seedwing.
 
 ## Test cases
 
@@ -39,6 +41,7 @@ The following metrics are collected for each test case
 To run the benchmark, make sure you have the `opa` and `swio` executables and run `bash run.sh`. The results will be put in the `results/` folder grouped by test case.
 
 ## Preliminary results
+
 
 The benchmarks are still in development, but so far, running on an Macbook Air M1, p99 evaluation latency (ns) looks like the following (lower is better):
 
