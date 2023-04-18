@@ -13,6 +13,7 @@ The rules and patterns in this benchmark are constructed to be optimal for each 
 * Integer comparison. Matching a number being equal to a particular value
 * String comparison. Exactly matching a string.
 * JSON comparison. Validating a CycloneDX JSON structure for license compliance
+* Keylime measured boot. Verifying reference states (including digests of firmware, kernel, grub, initrd etc. as mentioned in [example\_reference\_state.json](https://github.com/keylime/keylime/blob/master/keylime/elchecking/example_reference_state.json)) of a TPM enabled node by using its TPM eventlog.
 
 You can inspect the policies and the inputs in the `testcases/` folder.
 

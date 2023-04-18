@@ -2,13 +2,13 @@
 #
 set -x
 
-TESTCASES="integer string json"
+TESTCASES="integer string json keylime_mb"
 
 for c in $TESTCASES
 do
 	mkdir -p results/$c
-	opa bench -i testcases/$c/input -d testcases/$c/opa.rego --package test allow -f json --benchmem > results/$c/opa.json
-	swio --policy testcases/$c bench --name seedwing::allow --count 100000 --input testcases/$c/input > results/$c/seedwing.json
+	opa bench --data testcases/$c/opa.rego --package test allow --input testcases/$c/input -f json --benchmem > results/$c/opa.json
+	swio bench --policy testcases/$c --name seedwing::allow  --input testcases/$c/input --count 100000 > results/$c/seedwing.json
 done
 
 
