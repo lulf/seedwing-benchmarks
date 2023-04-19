@@ -45,10 +45,11 @@ To run the benchmark, make sure you have the `opa` and `swio` executables and ru
 
 The benchmarks are still in development, but so far, running on an Macbook Air M1, p99 evaluation latency (ns) looks like the following (lower is better):
 
-| Benchmark |     OPA | Seedwing | Speedup |
-| :---      |    ---: |     ---: |    ---: |
-| Integer   |   13742 |    *293* |     71x |
-| String    |   48735 |    *293* |    166x |
-| JSON      | 1452139 | *232447* |      6x |
+| Benchmark |       OPA | Seedwing |
+| :---      |      ---: |     ---: |
+| Integer   |     20539 |    *250* |
+| String    |     51782 |    *335* |
+| JSON      |   1888702 | *335871* |
+| Keylime   | *1453880* |  3178495 |
 
-NOTE: CPU and memory utilization numbers are not yet captured. 
+NOTE: CPU and memory utilization numbers are not yet captured from `swio`
