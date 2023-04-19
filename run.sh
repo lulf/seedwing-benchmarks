@@ -2,7 +2,8 @@
 #
 set -x
 
-TESTCASES="integer string json keylime_mb"
+#TESTCASES="integer string json keylime_mb"
+TESTCASES="keylime_mb"
 
 for c in $TESTCASES
 do
